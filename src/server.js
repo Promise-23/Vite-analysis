@@ -1,26 +1,4 @@
 /**
- * 总结下Vite的实现原理：
-
-    Vite在浏览器端使用的是 export import 方式导入和导出的模块；
-
-    vite同时实现了按需加载；
-
-    Vite高度依赖module script特性。
-
-    实现过程如下:
-
-    在 koa 中间件中获取请求 body；
-
-    通过 es-module-lexer 解析资源 ast 并拿到 import 内容；
-
-    判断 import 的资源是否是 npm 模块；
-
-    返回处理后的资源路径："vue" => "/@modules/vue"
-    ————————————————
-    版权声明：本文为CSDN博主「前端优选」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-    原文链接：https://blog.csdn.net/webyouxuan/article/details/107551758
-*/
-/**
  * 首先 npm install es-module-lexer koa koa-static magic-string
  *  koa、koa-static 是vite内部使用的服务框架；
 
